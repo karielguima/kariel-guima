@@ -230,28 +230,25 @@ List<Cidade> lista;
     JOptionPane.showMessageDialog(rootPane, "Cadastrado com Sucesso");
     }
     
-   limpar();
+   
      
     }//GEN-LAST:event_BtnCadastrarActionPerformed
 
     private void BtnPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrimeiroActionPerformed
         // TODO add your handling code here: if(lista.size()>0)
         {
-           if(lista.size()>0)
-        {
-            posicao = 0;
             Cidade cidade = lista.get(0);
             txtCodigo.setText(cidade.getCodigo().toString());
             txtNome.setText(cidade.getNome());
            
-        }}
+        }
     }//GEN-LAST:event_BtnPrimeiroActionPerformed
 
     private void BtnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAnteriorActionPerformed
         // TODO add your handling code here: if(posicao>0)
         {
             posicao = posicao -1;
-          Cidade cidade = lista.get(posicao);
+          Cidade cidade = lista.get(0);
             txtCodigo.setText(cidade.getCodigo().toString());
             txtNome.setText(cidade.getNome());
     }
@@ -261,7 +258,7 @@ List<Cidade> lista;
         // TODO add your handling code here:  if (posicao<lista.size()-1)
         {
             posicao = posicao +1;
-            Cidade cidade = lista.get(posicao);
+            Cidade cidade = lista.get(0);
             txtCodigo.setText(cidade.getCodigo().toString());
             txtNome.setText(cidade.getNome());
     }
@@ -271,7 +268,7 @@ List<Cidade> lista;
         // TODO add your handling code here: if (lista.size()>0)
         {
             posicao = lista.size()-1;
-             Cidade cidade = lista.get(posicao);
+             Cidade cidade = lista.get(0);
             txtCodigo.setText(cidade.getCodigo().toString());
             txtNome.setText(cidade.getNome());
     }
@@ -282,9 +279,7 @@ List<Cidade> lista;
         
           if (txtCodigo.getText().isEmpty()==false)
         {
-             lista.remove(lista.get(posicao));
-             limpar();
-             posicao=0;
+            lista.remove(posicao);
             
            
         }
